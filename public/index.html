@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FraudGuard AI - Financial Risk Sentinel</title>
+<link rel="stylesheet" href="css/output.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-layering { background-color: #f3f3f6; }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fc; color: #1a1c1e; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 px-4 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl h-screen w-64 border-r-0 z-50">
+<div class="mb-10 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tighter bg-gradient-to-br from-blue-700 to-blue-500 bg-clip-text text-transparent">FraudGuard AI</h1>
+<p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest leading-none">AI Risk Engine Active</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-700 font-bold border-r-2 border-blue-600 bg-blue-50/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] font-semibold tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 font-medium hover:bg-slate-200/50 transition-colors" href="#live-transactions-section">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Manrope'] font-semibold tracking-tight">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 font-medium hover:bg-slate-200/50 transition-colors" href="#recent-alerts-section">
+<span class="material-symbols-outlined" data-icon="notification_important">notification_important</span>
+<span class="font-['Manrope'] font-semibold tracking-tight">Fraud Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 font-medium hover:bg-slate-200/50 transition-colors" href="#analytics-section">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-['Manrope'] font-semibold tracking-tight">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 font-medium hover:bg-slate-200/50 transition-colors" href="javascript:alert('Settings panel is under construction for the demo.');">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Manrope'] font-semibold tracking-tight">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button onclick="location.href='#quick-analysis-section'" class="w-full py-3 px-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold text-sm shadow-md active:scale-95 transition-all">
+                Analyze Transaction
+            </button>
+</div>
+</aside>
+<header class="flex justify-between items-center h-16 px-8 ml-64 sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl shadow-[0px_20px_40px_rgba(26,28,30,0.06)]">
+<div class="flex items-center w-1/3">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input id="global-search" class="w-full bg-slate-50 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400" placeholder="Search transactions, users..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-600 hover:text-blue-700 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full border-2 border-white"></span>
+</button>
+<button id="dark-mode-toggle" class="text-slate-600 hover:text-blue-700 transition-colors">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-100">
+<div class="text-right">
+<p class="text-sm font-semibold text-on-surface leading-tight">Sarah Chen</p>
+<p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Lead Analyst</p>
+</div>
+<img alt="Analyst Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-blue-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV5SqhWjc_Xice6eruoXZFWDsgDgEe2om1ZeApPnFqOmNlJN_TMS8FJ7XftADwZsF7WUYDfeNnov8M-oFTaIHo_iu1yMXKg6aPWgl5VXm5JlBpIvxmJ1dWf2aG18EnLhTnNScc_PCpEq09aPRsIXlMP_iX-36edU5gP0uxewSG_o3viXN3ucfdHxeV3NYHjvjMjLbaNszCLux80JPRl74nx_YFuE01_yNepAJvybcFg05CCcr00XXxxhSQcg0bPEQPmrqmTYaMiec"/>
+</div>
+</div>
+</header>
+<main class="ml-64 p-8 min-h-screen">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col gap-2">
+<p class="text-label-sm font-bold text-slate-500 uppercase tracking-widest">Total Transactions</p>
+<div class="flex items-end justify-between">
+<h3 id="total-transactions" class="text-3xl font-extrabold text-on-surface">0</h3>
+<span class="text-secondary flex items-center text-xs font-bold bg-secondary-container/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>Live
+                    </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col gap-2">
+<p class="text-label-sm font-bold text-slate-500 uppercase tracking-widest">Fraud Detected</p>
+<div class="flex items-end justify-between">
+<h3 id="fraud-detected" class="text-3xl font-extrabold text-on-surface">0</h3>
+<span class="text-tertiary flex items-center text-xs font-bold bg-tertiary-fixed/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1">warning</span>Live
+                    </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col gap-2">
+<p class="text-label-sm font-bold text-slate-500 uppercase tracking-widest">Safe Transactions</p>
+<div class="flex items-end justify-between">
+<h3 id="safe-transactions" class="text-3xl font-extrabold text-on-surface">100%</h3>
+<span class="text-secondary flex items-center text-xs font-bold bg-secondary-container/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1">check_circle</span>Stable
+                    </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col gap-2">
+<p class="text-label-sm font-bold text-slate-500 uppercase tracking-widest">Risk Rate</p>
+<div class="flex items-end justify-between">
+<h3 id="risk-rate" class="text-3xl font-extrabold text-on-surface">0.00%</h3>
+<span class="text-secondary flex items-center text-xs font-bold bg-secondary-container/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1">trending_down</span>Live
+                    </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-7 gap-8 mb-8">
+<div class="lg:col-span-5 space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div id="quick-analysis-section" class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm">
+<h2 class="headline text-xl font-bold mb-6 text-on-surface">Quick Analysis</h2>
+<form class="space-y-4">
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-500 uppercase">User ID</label>
+<input id="sim-user-id" class="w-full bg-slate-50 border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20" type="text" value="USR-99210"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-500 uppercase">Amount (₹)</label>
+<input id="sim-amount" class="w-full bg-slate-50 border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Enter amount" type="number" required/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-500 uppercase">Location</label>
+<input id="sim-location" class="w-full bg-slate-50 border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20" placeholder="e.g. Mumbai" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-500 uppercase">Device</label>
+<input id="sim-device" class="w-full bg-slate-50 border-none rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20" placeholder="e.g. iPhone 15" type="text"/>
+</div>
+</div>
+<button id="run-risk-engine" class="w-full mt-4 py-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold shadow-lg shadow-blue-500/20 active:scale-95 transition-all" type="button">
+                                Run Risk Engine
+                            </button>
+</form>
+</div>
+<div class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl text-white flex flex-col justify-between overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="flex justify-between items-start mb-4">
+<h2 class="headline text-xl font-bold">Analysis Result</h2>
+<span id="analysis-banner" class="px-3 py-1 rounded-full bg-slate-800 text-slate-400 text-[10px] font-bold uppercase tracking-widest border border-slate-700">AWAITING</span>
+</div>
+<div class="flex items-center gap-6 my-4">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-700" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251" stroke-dashoffset="62" stroke-width="8"></circle>
+</svg>
+<span id="analysis-score" class="absolute text-2xl font-black headline">Wait</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Threat Score</p>
+<p id="analysis-threat-msg" class="text-slate-300 text-sm mt-1 leading-relaxed">Waiting for newly completed transaction data...</p>
+</div>
+</div>
+<div class="space-y-3 mt-4">
+<div id="analysis-triggers" class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-lg bg-white/5 text-[11px] font-semibold border border-white/10">-</span>
+</div>
+<div class="pt-4 border-t border-white/10">
+<p class="text-xs font-bold text-secondary-fixed mb-1 uppercase">Recommendation</p>
+<p id="analysis-recommendation" class="text-sm font-semibold">-</p>
+</div>
+</div>
+</div>
+</div>
+<div id="live-transactions-section" class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden mt-8">
+<div class="p-6 flex justify-between items-center border-b border-slate-50">
+<h2 class="headline text-xl font-bold text-on-surface">Live Network Stream</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/50">
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">User ID</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Amount</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Location</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Device</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Time</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center">Score</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-right">Action</th>
+</tr>
+</thead>
+<tbody id="live-transactions-table" class="divide-y divide-slate-50">
+<!-- Dynamic Items injected here -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2 space-y-8">
+<div id="analytics-section" class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+<h2 class="headline text-lg font-bold mb-6 text-on-surface">System Health</h2>
+<div class="aspect-square relative flex items-center justify-center">
+<div class="w-40 h-40 rounded-full border-[12px] border-secondary flex flex-col items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-[12px] border-tertiary" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 20%); display: none;"></div>
+<span id="system-health-rate" class="text-3xl font-black text-on-surface">100%</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">System Health</span>
+</div>
+</div>
+</div>
+<div id="recent-alerts-section" class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h2 class="headline text-lg font-bold text-on-surface">Recent Alerts</h2>
+<span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
+</div>
+<div id="recent-alerts-list" class="space-y-4">
+<!-- Dynamic Alerts Here -->
+<p class="text-sm text-slate-400">Waiting for alerts...</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="ml-64 px-8 py-6 flex justify-between items-center text-slate-400 text-[11px] font-medium border-t border-slate-50">
+<div>
+            © 2024 FraudGuard AI Sentinel. Real-time Risk Engine v4.2.1-stable
+        </div>
+<div class="flex gap-4">
+<a class="hover:text-primary transition-colors" href="#">API Docs</a>
+<a class="hover:text-primary transition-colors" href="#">Compliance Hub</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</footer>
+
+<script type="module" src="js/firebase-init.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+
+</body></html>
